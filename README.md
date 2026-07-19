@@ -18,7 +18,7 @@ LINAM doesn't aim to replace Docker—it offers an alternative for those who pre
 
 > **Note:** This list represents the planned features and may change as the project evolves.
 
-* 📊 Hardware resource monitoring (CPU, RAM, Disk, Network)
+* 📊 Hardware resource monitoring (CPU, RAM, disk, network)
 * 🚀 Deploy and manage applications as native systemd services
 * ⚙️ Service management (start, stop, restart, enable, disable)
 * 📜 Integrated log viewer powered by `journalctl`
@@ -28,3 +28,11 @@ LINAM doesn't aim to replace Docker—it offers an alternative for those who pre
 * 🔄 Application updates
 * 👥 User and permission management
 * 🔌 Plugin-based runtime support *(planned — initial releases will support executable files only)*
+
+## Stack
+
+LINAM is built using a lightweight and modern technology stack:
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=go,linux,sqlite,bash,vue,vite,bootstrap" />
+</p>
