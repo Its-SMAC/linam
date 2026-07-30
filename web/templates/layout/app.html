@@ -1,0 +1,23 @@
+{{ define "app" }}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="Itss_SMAC" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>LINAM Panel</title>
+    </head>
+    <body>
+        <header>{{ template "NavBar" . }}</header>
+
+        <main>
+            {{ template "Content" . }}
+        </main>
+
+        <footer>{{ template "Footer" .}}</footer>
+
+        <script type="module" src="/static/js/datastar.js"></script>
+    </body>
+</html>
+{{ end }}

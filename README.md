@@ -20,7 +20,7 @@ LINAM doesn't aim to replace Docker—it offers an alternative for those who pre
 
 * 📊 Hardware resource monitoring (CPU, RAM, disk, network)
 * 🚀 Deploy and manage applications as native systemd services
-* ⚙️ Service management (start, stop, restart, enable, disable)
+* 🔒 Service management (start, stop, restart, enable, disable)
 * 📜 Integrated log viewer powered by `journalctl`
 * 🌐 Reverse proxy management *(planned)*
 * 🔒 HTTPS certificate management *(planned)*
@@ -34,5 +34,6 @@ LINAM doesn't aim to replace Docker—it offers an alternative for those who pre
 LINAM is built using a lightweight and modern technology stack:
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=go,linux,sqlite,bash,vue,vite,bootstrap" />
+  <img src="https://skillicons.dev/icons?i=go,linux,sqlite,bash" /> 
+  <img src="https://img.shields.io/badge/Datastar-Server--Driven-7C3AED?style=for-the-badge" />
 </p>

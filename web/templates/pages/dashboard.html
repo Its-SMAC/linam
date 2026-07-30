@@ -1,0 +1,18 @@
+{{ define "dashboard" }} {{ template "app" . }} {{ end }} {{ define "Content" }}
+
+<div class="content">
+    <div class="overviewCards">
+        {{ if .Items }} {{ range .Items }}
+        <div></div>
+        {{ end }} {{ else }}
+        <p>Nothing to show here</p>
+        {{ end }}
+    </div>
+    <div class="mainContent">
+        <div class="components">
+
+        </div>
+    </div>
+</div>
+
+{{ end }}
