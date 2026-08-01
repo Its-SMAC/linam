@@ -16,7 +16,7 @@
                     /></svg
             ></a>
             <!--Network button-->
-            <a href="/network" class="servicesBtn"
+            <a href="/network" class="networkBtn"
                 ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="24px"
@@ -43,12 +43,12 @@
             ></a>
         </div>
         <div class="navbar-userArea">
-            <span class="userInfo">
+            <span class="userInfo clicky">
                 <span class="userIcon">{{ .User.Initial }}</span>
                 <p class="userName">{{ .User.Name }}</p>
             </span>
 
-            <button data-on-click="@post('/logout')">
+            <button type="button" data-on-click=""="@post('/logout')">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="24px"

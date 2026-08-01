@@ -17,38 +17,143 @@
             <!--Col 2 & 3-->
             <div class="div-service">
                 <div class="search-service">
-                    <input
-                        type="text"
-                        placeholder="Search Service"
-                        class="input search"
-                        data-bind="searchService"
-                    />
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#241f31"
-                    >
-                        <path
-                            d="M824-120 568-376q-12-13-25.5-26.5T516-428q38-24 61-64t23-88q0-75-52.5-127.5T420-760q-75 0-127.5 52.5T240-580q0 6 .5 11.5T242-557q-18 2-39.5 8T164-535q-2-11-3-22t-1-23q0-109 75.5-184.5T420-840q109 0 184.5 75.5T680-580q0 43-13.5 81.5T629-428l251 252-56 56ZM240-80l-12-60q-12-5-22.5-10.5T184-164l-58 18-40-68 46-40q-2-13-2-26t2-26l-46-40 40-68 58 18q11-8 21.5-13.5T228-420l12-60h80l12 60q12 5 22.5 10.5T376-396l58-18 40 68-46 40q2 13 2 26t-2 26l46 40-40 68-58-18q-11 8-21.5 13.5T332-140l-12 60h-80Zm96.5-143.5Q360-247 360-280t-23.5-56.5Q313-360 280-360t-56.5 23.5Q200-313 200-280t23.5 56.5Q247-200 280-200t56.5-23.5Z"
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Search Service"
+                            class="input search"
+                            data-bind="searchService"
                         />
-                    </svg>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24px"
+                            viewBox="0 -960 960 960"
+                            width="24px"
+                            fill="#241f31"
+                        >
+                            <path
+                                d="M824-120 568-376q-12-13-25.5-26.5T516-428q38-24 61-64t23-88q0-75-52.5-127.5T420-760q-75 0-127.5 52.5T240-580q0 6 .5 11.5T242-557q-18 2-39.5 8T164-535q-2-11-3-22t-1-23q0-109 75.5-184.5T420-840q109 0 184.5 75.5T680-580q0 43-13.5 81.5T629-428l251 252-56 56ZM240-80l-12-60q-12-5-22.5-10.5T184-164l-58 18-40-68 46-40q-2-13-2-26t2-26l-46-40 40-68 58 18q11-8 21.5-13.5T228-420l12-60h80l12 60q12 5 22.5 10.5T376-396l58-18 40 68-46 40q2 13 2 26t-2 26l46 40-40 68-58-18q-11 8-21.5 13.5T332-140l-12 60h-80Zm96.5-143.5Q360-247 360-280t-23.5-56.5Q313-360 280-360t-56.5 23.5Q200-313 200-280t23.5 56.5Q247-200 280-200t56.5-23.5Z"
+                            />
+                        </svg>
+                    </div>
+                    <!-- Add a new Service button -->
+                    <button>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24px"
+                            viewBox="0 -960 960 960"
+                            width="24px"
+                            fill="#241f31"
+                        >
+                            <path
+                                d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+                            />
+                        </svg>
+                        Add service
+                    </button>
                 </div>
                 <div class="list-service">
                     {{ range .Services }}
-                    <div class="item-list-info"><span
-                        ><span>{{ .Name }}</span>
-                        -
-                        <span id="status-service-{{.Id}}"
-                            >{{ .Status }}</span
-                        ></span
-                    ></div>
-                    <div class="item-list-actions">
-                        <button></button>
-                        <button></button>
-                        <button></button>
+                    <div class="list-item clicky">
+                        <div class="list-item-info">
+                            <span
+                                ><span>{{ .Name }}</span>
+                                -
+                                <span id="status-service-{{.Id}}"
+                                    >{{ .Status }}</span
+                                ></span
+                            >
+                        </div>
+                        <div class="list-item-actions">
+                            <!-- Start/Stop button - Show only when service are "Enable" -->
+                            <button class="active">
+                                <!-- Start button - show only when service are stopped -->
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="24px"
+                                    viewBox="0 -960 960 960"
+                                    width="24px"
+                                    fill="#241f31"
+                                >
+                                    <path
+                                        d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z"
+                                    />
+                                </svg>
+                            </button>
+                            <button class="active">
+                                <!-- Stop button - show only when service are started -->
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="24px"
+                                    viewBox="0 -960 960 960"
+                                    width="24px"
+                                    fill="#241f31"
+                                >
+                                    <path
+                                        d="M320-640v320-320Zm-80 400v-480h480v480H240Zm80-80h320v-320H320v320Z"
+                                    />
+                                </svg>
+                            </button>
+                            <!-- Enable/Disable button - Show always but one per Status -->
+                            <button class="active">
+                                <!-- Enable button - show when service are down/disable -->
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="24px"
+                                    viewBox="0 -960 960 960"
+                                    width="24px"
+                                    fill="#241f31"
+                                >
+                                    <path
+                                        d="M324-111.5Q251-143 197-197t-85.5-127Q80-397 80-480t31.5-156Q143-709 197-763t127-85.5Q397-880 480-880t156 31.5Q709-817 763-763t85.5 127Q880-563 880-480t-31.5 156Q817-251 763-197t-127 85.5Q563-80 480-80t-156-31.5ZM480-160q54 0 104-17.5t92-50.5L228-676q-33 42-50.5 92T160-480q0 134 93 227t227 93Zm252-124q33-42 50.5-92T800-480q0-134-93-227t-227-93q-54 0-104 17.5T284-732l448 448ZM480-480Z"
+                                    />
+                                </svg>
+                            </button>
+                            <button class="active">
+                                <!-- Disable button - Is activeted when the service are up/enable -->
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="24px"
+                                    viewBox="0 -960 960 960"
+                                    width="24px"
+                                    fill="#241f31"
+                                >
+                                    <path
+                                        d="M451.5-491.5Q440-503 440-520v-320q0-17 11.5-28.5T480-880q17 0 28.5 11.5T520-840v320q0 17-11.5 28.5T480-480q-17 0-28.5-11.5Zm-112 343q-65.5-28.5-114-77t-77-114Q120-405 120-480q0-61 20-118.5T198-704q11-14 28-13.5t30 13.5q11 11 10 27t-11 30q-27 36-41 79t-14 88q0 117 81.5 198.5T480-200q117 0 198.5-81.5T760-480q0-46-13.5-89.5T704-649q-10-13-11-28.5t10-26.5q12-12 29-12.5t28 12.5q39 48 59.5 105T840-480q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-120q-75 0-140.5-28.5Z"
+                                    />
+                                </svg>
+                            </button>
+                            <!-- Restart button - Always showing -->
+                            <button>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="24px"
+                                    viewBox="0 -960 960 960"
+                                    width="24px"
+                                    fill="#241f31"
+                                >
+                                    <path
+                                        d="M520-330v-60h160v60H520Zm60 210v-50h-60v-60h60v-50h60v160h-60Zm100-50v-60h160v60H680Zm40-110v-160h60v50h60v60h-60v50h-60Zm111-280h-83q-26-88-99-144t-169-56q-117 0-198.5 81.5T200-480q0 72 32.5 132t87.5 98v-110h80v240H160v-80h94q-62-50-98-122.5T120-480q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q129 0 226.5 79.5T831-560Z"
+                                    />
+                                </svg>
+                            </button>
+                            <!-- Edit button - Always appears -->
+                            <button>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="24px"
+                                    viewBox="0 -960 960 960"
+                                    width="24px"
+                                    fill="#241f31"
+                                >
+                                    <path
+                                        d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
+
                     {{ end }}
                 </div>
             </div>
